@@ -18,5 +18,11 @@ import './commands'
 import './cmdFaker'
 import '@shelex/cypress-allure-plugin';
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+require('cypress-terminal-report/src/installLogsCollector')({
+  xhr: {
+    // printHeaderData: true,
+    printRequestData: true
+  },
+  // enableExtendedCollector: true,
+  collectTypes: ['cons:log', 'cons:warn', 'cons:error', 'cy:xhr', 'cy:request', 'cy:intercept', 'cy:command']
+});

@@ -1,0 +1,25 @@
+{
+  "validCredentials": {
+    "username": "Nifaanya Priya",
+    "password": "Nifanaya_Incu"
+  },
+  "invalidCredentials": [
+    {
+      "username": "invalid_user",
+      "password": ""
+    },
+    {
+      "username": "",
+      "password": ""
+    },
+    {
+      "username": "test",
+      "password": ""
+    }
+  ],
+  "testConfig": {
+    "baseUrl": "https://parabank.parasoft.com/parabank",
+    "timeout": 10000,
+    "retries": 2
+  }
+}

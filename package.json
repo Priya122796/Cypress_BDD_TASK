@@ -4,31 +4,40 @@
   "description": "This project is meant to be a kind of template to start working with Cucumber, Allure and Cypress",
   "main": "index.js",
   "scripts": {
-    "reports:clear": "if exist cypress\\videos rmdir /q /s cypress\\videos && if exist cypress\\screenshots rmdir /q /s cypress\\screenshots && if exist cypress\\reports rmdir /q /s cypress\\reports",
-    "allure:clear": "if exist allure-report rmdir /q /s allure-report && if exist allure-results rmdir /q /s allure-results && if exist cypress\\screenshots rmdir /q /s cypress\\screenshots && if exist cypress\\videos rmdir /q /s cypress\\videos && if exist reports rmdir /q /s reports",
-    "cy:run": "npx cypress run --env allure=true,allureReuseAfterSpec=true --headed --browser chrome",
-    "cy:run_qa": "cypress run --env allure=true --env configFile=qa --browser chrome",
-    "cy:report": "node ./cucumber-html-report.js",
-    "allure:report": "allure generate allure-results --clean -o allure-report"
+    "reports:clear": "(if exist allure-results (rmdir /S /Q allure-results)) && (if exist allure-report (rmdir /S /Q allure-report)) && mkdir allure-results",
+    "cy:open": "npx cypress open",
+    "test:parabank": "npx cypress run --headed",
+    "test:parabank:allure": "npx cypress run --env allure=true --headed --browser chrome",
+    "test:smoke:allure": "npx cypress run --env tags='@smoke' --env allure=true --browser chrome",
+    "allure:generate": "npx allure generate allure-results --clean -o allure-report",
+    "allure:open": "npx allure open allure-report",
+    "allure:serve": "npx allure serve allure-results",
+    "test:allure:report": "npm run reports:clear && npm run test:parabank:allure & npm run allure:generate && npm run allure:open",
+    "test:allure:serve": "npm run reports:clear && npm run test:parabank:allure & npm run allure:generate && npm run allure:serve",
+    "test:smoke:report": "npm run reports:clear && npm run test:smoke:allure && npm run allure:generate && npm run allure:open",
+    "report:generate": "node cucumber-html-report.js",
+    "test:cucumber-report": "npm run test:parabank && npm run report:generate"
   },
   "keywords": [
     "cypress"
   ],
   "author": "Nifaanya",
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^20.0.5",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.6",
     "@shelex/cypress-allure-plugin": "^2.40.2",
     "allure-commandline": "2.29.0",
     "allure-cypress": "3.0.0-beta.3",
     "cypress": "^13.10.0",
     "cypress-xpath": "^2.0.1",
     "esbuild": "^0.21.4",
+    "express": "^4.18.2",
     "moment": "^2.30.1",
     "moment-timezone": "^0.5.45",
     "multiple-cucumber-html-reporter": "^3.6.2"
   },
   "dependencies": {
-    "@faker-js/faker": "^8.4.1"
+    "@faker-js/faker": "^8.4.1",
+    "cypress-terminal-report": "^7.2.1"
   }
 }
