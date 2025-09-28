@@ -12,9 +12,7 @@
     "enabled": true,
     "output": "reports/cucumber-report.html"
   },
-  "stepDefinitions": [
-    "[filepath]/**/*.{js,ts}",
-    "[filepath].{js,ts}",
-    "cypress/e2e/step_definitions/*.{js,ts}"
+ "stepDefinitions": [
+    "cypress/e2e/step_definitions/**/*.{js,ts}"
   ]
 }
