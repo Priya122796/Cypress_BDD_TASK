@@ -75,3 +75,10 @@ npm run reports:clear
 ## Author
 
 **Nifaanya - Test Automation Engineer**
+
+Screenshot 
+Allure report: 
+<img width="1818" height="915" alt="image" src="https://github.com/user-attachments/assets/8c8b0b36-8856-4908-acbe-060bfecfa32f" />
+
+TestCases results 
+<img width="1857" height="924" alt="image" src="https://github.com/user-attachments/assets/27dd9fec-6ecd-4e9e-9d08-998352de7efa" />
