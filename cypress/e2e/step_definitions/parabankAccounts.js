@@ -1,5 +1,3 @@
-import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
-import { ParaBankLoginPage } from '../pages/ParaBankLoginPage';
 import { ParaBankDashboardPage } from '../pages/ParaBankDashboardPage';
 import { ParaBankAccountsPage } from '../pages/ParaBankAccountsPage';
 

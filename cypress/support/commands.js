@@ -1,4 +1,3 @@
-// Fixed ParaBank Custom Commands
 Cypress.Commands.add('loginToParaBank', (username, password) => {
   cy.log(`Attempting login with username: ${username}`);
   cy.visit('/index.htm?ConnType=JDBC');
@@ -32,7 +31,7 @@ Cypress.Commands.add('getAccountBalances', () => {
       index: index + 1
     });
   }).then(() => {
-    // Log after all processing is done
+  
     cy.log('========== ACCOUNT DETAILS REPORT ==========');
     accounts.forEach((account, index) => {
       const balance = parseFloat(account.balance.replace(/[$,]/g, ''));
