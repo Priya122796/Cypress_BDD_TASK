@@ -1,11 +1,860 @@
 {
   "cypress\\e2e\\features\\parabank1.Login.feature": {
-    "An uncaught error was detected outside of a test": []
+    "ParaBank Login Functionality -> Successful login with valid credentials": [
+      {
+        "type": "cy:command",
+        "message": "Given \t**I navigate to ParaBank application**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "visit\t/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "When \t**I enter username \"Nifaanya Priya\" and password \"Nifanaya_Incu\"**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:intercept",
+        "message": "Method: POST\nMatcher: \"**/login**\"",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"username\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "clear\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "type\tNifaanya Priya",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"password\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "clear\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "type\tNifanaya_Incu",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I click the login button**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[value=\"Log In\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "click\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "form sub\t--submitting form--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "page load\t--page loaded--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "new url\thttps://parabank.parasoft.com/parabank/overview.htm",
+        "severity": "success"
+      },
+      {
+        "type": "cy:xhr",
+        "message": "GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts\nStatus: 200",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "Then \t**I should see login API is successful**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "wait\t@loginRequest",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **[ 200, 302 ]** to be an array",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **302** to be one of **[ 200, 302 ]**\nActual: \t302\nExpected: \t[200,302]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I should see welcome message with username \"Welcome\"**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\t.smallText",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "first\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **<p.smallText>** to contain **Welcome**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I should be redirected to dashboard page**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "url\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **https://parabank.parasoft.com/parabank/overview.htm** to include **overview**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\ttable#accountTable",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **<table#accountTable.gradient-style>** to be **visible**",
+        "severity": "success"
+      }
+    ],
+    "ParaBank Login Functionality -> Login with invalid credentials": [
+      {
+        "type": "cy:command",
+        "message": "Given \t**I navigate to ParaBank application**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "visit\t/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "When \t**I enter username \"invalid_user\" and password \" \"**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:intercept",
+        "message": "Method: POST\nMatcher: \"**/login**\"",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"username\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "clear\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "type\tinvalid_user",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"password\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "clear\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "type\t ",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I click the login button**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[value=\"Log In\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "click\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "form sub\t--submitting form--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "page load\t--page loaded--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "new url\thttps://parabank.parasoft.com/parabank/overview.htm",
+        "severity": "success"
+      },
+      {
+        "type": "cy:xhr",
+        "message": "GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "Then \t**I should see login API is successful**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "wait\t@loginRequest",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **[ 200, 302 ]** to be an array",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **302** to be one of **[ 200, 302 ]**\nActual: \t302\nExpected: \t[200,302]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I should be redirected to dashboard page**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "url\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **https://parabank.parasoft.com/parabank/overview.htm** to include **overview**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\ttable#accountTable",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **<table#accountTable.gradient-style>** to be **visible**",
+        "severity": "success"
+      }
+    ],
+    "ParaBank Login Functionality -> Login form validation": [
+      {
+        "type": "cy:command",
+        "message": "Given \t**I navigate to ParaBank application**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "visit\t/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "When \t**I click the login button without entering credentials**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[value=\"Log In\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "click\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "form sub\t--submitting form--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "page load\t--page loaded--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "new url\thttps://parabank.parasoft.com/parabank/login.htm;jsessionid=8C37A1E98AFBA9DF4184314CF320D2AB",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "Then \t**I should see validation errors**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "url\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **https://parabank.parasoft.com/parabank/login.htm;jsessionid=8C37A1E98AFBA9DF4184314CF320D2AB** to include **login**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I should remain on login page**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "url\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **https://parabank.parasoft.com/parabank/login.htm;jsessionid=8C37A1E98AFBA9DF4184314CF320D2AB** to include **login**",
+        "severity": "success"
+      }
+    ]
   },
   "cypress\\e2e\\features\\parabank2.Accounts.feature": {
-    "An uncaught error was detected outside of a test": []
+    "ParaBank Accounts Management -> Get all accounts and total amount": [
+      {
+        "type": "cy:command",
+        "message": "Given \t**I navigate to ParaBank application**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "visit\t/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I login with valid credentials**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "visit\t/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:intercept",
+        "message": "Method: POST\nMatcher: \"**/login**\"",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"username\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "clear\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "type\tNifaanya Priya",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"password\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "clear\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "type\tNifanaya_Incu",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[value=\"Log In\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "click\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "form sub\t--submitting form--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "page load\t--page loaded--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "new url\thttps://parabank.parasoft.com/parabank/overview.htm",
+        "severity": "success"
+      },
+      {
+        "type": "cy:xhr",
+        "message": "GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts\nStatus: 200",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "wait\t@loginRequest",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **[ 200, 302 ]** to be an array",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **302** to be one of **[ 200, 302 ]**\nActual: \t302\nExpected: \t[200,302]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "When \t**I click on Accounts Overview**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\ta[href*=\"overview\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "click\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "page load\t--page loaded--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:xhr",
+        "message": "GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts\nStatus: 200",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "Then \t**I should get all account balances**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\ttable#accountTable",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **<table#accountTable.gradient-style>** to be **visible**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\ttable#accountTable tbody tr",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **[ <tr>, 16 more... ]** to have a length above **0**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\ttable#accountTable tbody tr td:last-child",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I should calculate total amount**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I should log the results**",
+        "severity": "success"
+      }
+    ]
   },
   "cypress\\e2e\\features\\parabank3.Logout.feature": {
-    "An uncaught error was detected outside of a test": []
+    "ParaBank Logout Functionality -> Successful logout": [
+      {
+        "type": "cy:command",
+        "message": "Given \t**I navigate to ParaBank application**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "visit\t/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I login with valid credentials**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "visit\t/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:intercept",
+        "message": "Method: POST\nMatcher: \"**/login**\"",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"username\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "clear\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "type\tNifaanya Priya",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"password\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "clear\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "type\tNifanaya_Incu",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[value=\"Log In\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "click\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "form sub\t--submitting form--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "page load\t--page loaded--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "new url\thttps://parabank.parasoft.com/parabank/overview.htm",
+        "severity": "success"
+      },
+      {
+        "type": "cy:xhr",
+        "message": "GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts\nStatus: 200",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "wait\t@loginRequest",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **[ 200, 302 ]** to be an array",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **302** to be one of **[ 200, 302 ]**\nActual: \t302\nExpected: \t[200,302]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "When \t**I click logout button**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\ta[href*=\"logout\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "click\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "page load\t--page loaded--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "new url\thttps://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "Then \t**I should be redirected to login page**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "url\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC** to include **index.htm**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I should see login form**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"username\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **<input.input>** to be **visible**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"password\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **<input.input>** to be **visible**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[value=\"Log In\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **<input.button>** to be **visible**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**session should be terminated**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "getCookies\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **[ Array(1) ]** not to be empty",
+        "severity": "success"
+      }
+    ],
+    "ParaBank Logout Functionality -> Logout and attempt to access protected page": [
+      {
+        "type": "cy:command",
+        "message": "Given \t**I navigate to ParaBank application**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "visit\t/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I login with valid credentials**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "visit\t/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:intercept",
+        "message": "Method: POST\nMatcher: \"**/login**\"",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"username\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "clear\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "type\tNifaanya Priya",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[name=\"password\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "clear\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "type\tNifanaya_Incu",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\tinput[value=\"Log In\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "click\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "form sub\t--submitting form--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "page load\t--page loaded--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "new url\thttps://parabank.parasoft.com/parabank/overview.htm",
+        "severity": "success"
+      },
+      {
+        "type": "cy:xhr",
+        "message": "GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts\nStatus: 200",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "wait\t@loginRequest",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **[ 200, 302 ]** to be an array",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "assert\texpected **302** to be one of **[ 200, 302 ]**\nActual: \t302\nExpected: \t[200,302]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "When \t**I click logout button**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "get\ta[href*=\"logout\"]",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "click\t",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "page load\t--page loaded--",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "new url\thttps://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "And \t**I try to access accounts overview directly**",
+        "severity": "success"
+      },
+      {
+        "type": "cy:command",
+        "message": "visit\t/overview.htm",
+        "severity": "error"
+      }
+    ]
   }
 }

@@ -22,7 +22,7 @@ When('I enter username {string} and password {string}', (username, password) => 
   loginPage.enterPassword(password);
 });
 
-When('I click the login button', () => {
+Then('I click the login button', () => {
   cy.log('Clicking login button');
   loginPage.clickLoginButton();
 });

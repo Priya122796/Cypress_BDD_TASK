@@ -1,13 +1,207 @@
 cypress\e2e\features\parabank1.Login.feature:
-    An uncaught error was detected outside of a test
+    ParaBank Login Functionality -> Successful login with valid credentials
+        cy:command (K): Given 	**I navigate to ParaBank application**
+        cy:command (K): visit	/index.htm?ConnType=JDBC
+        cy:command (K): When 	**I enter username "Nifaanya Priya" and password "Nifanaya_Incu"**
+      cy:intercept (K): Method: POST
+                        Matcher: "**/login**"
+        cy:command (K): get	input[name="username"]
+        cy:command (K): clear
+        cy:command (K): type	Nifaanya Priya
+        cy:command (K): get	input[name="password"]
+        cy:command (K): clear
+        cy:command (K): type	Nifanaya_Incu
+        cy:command (K): And 	**I click the login button**
+        cy:command (K): get	input[value="Log In"]
+        cy:command (K): click
+        cy:command (K): form sub	--submitting form--
+        cy:command (K): page load	--page loaded--
+        cy:command (K): new url	https://parabank.parasoft.com/parabank/overview.htm
+            cy:xhr (K): GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts
+                        Status: 200
+        cy:command (K): Then 	**I should see login API is successful**
+        cy:command (K): wait	@loginRequest
+        cy:command (K): assert	expected **[ 200, 302 ]** to be an array
+        cy:command (K): assert	expected **302** to be one of **[ 200, 302 ]**
+                        Actual: 	302
+                        Expected: 	[200,302]
+        cy:command (K): And 	**I should see welcome message with username "Welcome"**
+        cy:command (K): get	.smallText
+        cy:command (K): first
+        cy:command (K): assert	expected **<p.smallText>** to contain **Welcome**
+        cy:command (K): And 	**I should be redirected to dashboard page**
+        cy:command (K): url
+        cy:command (K): assert	expected **https://parabank.parasoft.com/parabank/overview.htm** to include **overview**
+        cy:command (K): get	table#accountTable
+        cy:command (K): assert	expected **<table#accountTable.gradient-style>** to be **visible**
+
+    ParaBank Login Functionality -> Login with invalid credentials
+        cy:command (K): Given 	**I navigate to ParaBank application**
+        cy:command (K): visit	/index.htm?ConnType=JDBC
+        cy:command (K): When 	**I enter username "invalid_user" and password " "**
+      cy:intercept (K): Method: POST
+                        Matcher: "**/login**"
+        cy:command (K): get	input[name="username"]
+        cy:command (K): clear
+        cy:command (K): type	invalid_user
+        cy:command (K): get	input[name="password"]
+        cy:command (K): clear
+        cy:command (K): type
+        cy:command (K): And 	**I click the login button**
+        cy:command (K): get	input[value="Log In"]
+        cy:command (K): click
+        cy:command (K): form sub	--submitting form--
+        cy:command (K): page load	--page loaded--
+        cy:command (K): new url	https://parabank.parasoft.com/parabank/overview.htm
+            cy:xhr (K): GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts
+        cy:command (K): Then 	**I should see login API is successful**
+        cy:command (K): wait	@loginRequest
+        cy:command (K): assert	expected **[ 200, 302 ]** to be an array
+        cy:command (K): assert	expected **302** to be one of **[ 200, 302 ]**
+                        Actual: 	302
+                        Expected: 	[200,302]
+        cy:command (K): And 	**I should be redirected to dashboard page**
+        cy:command (K): url
+        cy:command (K): assert	expected **https://parabank.parasoft.com/parabank/overview.htm** to include **overview**
+        cy:command (K): get	table#accountTable
+        cy:command (K): assert	expected **<table#accountTable.gradient-style>** to be **visible**
+
+    ParaBank Login Functionality -> Login form validation
+        cy:command (K): Given 	**I navigate to ParaBank application**
+        cy:command (K): visit	/index.htm?ConnType=JDBC
+        cy:command (K): When 	**I click the login button without entering credentials**
+        cy:command (K): get	input[value="Log In"]
+        cy:command (K): click
+        cy:command (K): form sub	--submitting form--
+        cy:command (K): page load	--page loaded--
+        cy:command (K): new url	https://parabank.parasoft.com/parabank/login.htm;jsessionid=8C37A1E98AFBA9DF4184314CF320D2AB
+        cy:command (K): Then 	**I should see validation errors**
+        cy:command (K): url
+        cy:command (K): assert	expected **https://parabank.parasoft.com/parabank/login.htm;jsessionid=8C37A1E98AFBA9DF4184314CF320D2AB** to include **login**
+        cy:command (K): And 	**I should remain on login page**
+        cy:command (K): url
+        cy:command (K): assert	expected **https://parabank.parasoft.com/parabank/login.htm;jsessionid=8C37A1E98AFBA9DF4184314CF320D2AB** to include **login**
 
 
 
 cypress\e2e\features\parabank2.Accounts.feature:
-    An uncaught error was detected outside of a test
+    ParaBank Accounts Management -> Get all accounts and total amount
+        cy:command (K): Given 	**I navigate to ParaBank application**
+        cy:command (K): visit	/index.htm?ConnType=JDBC
+        cy:command (K): And 	**I login with valid credentials**
+        cy:command (K): visit	/index.htm?ConnType=JDBC
+      cy:intercept (K): Method: POST
+                        Matcher: "**/login**"
+        cy:command (K): get	input[name="username"]
+        cy:command (K): clear
+        cy:command (K): type	Nifaanya Priya
+        cy:command (K): get	input[name="password"]
+        cy:command (K): clear
+        cy:command (K): type	Nifanaya_Incu
+        cy:command (K): get	input[value="Log In"]
+        cy:command (K): click
+        cy:command (K): form sub	--submitting form--
+        cy:command (K): page load	--page loaded--
+        cy:command (K): new url	https://parabank.parasoft.com/parabank/overview.htm
+            cy:xhr (K): GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts
+                        Status: 200
+        cy:command (K): wait	@loginRequest
+        cy:command (K): assert	expected **[ 200, 302 ]** to be an array
+        cy:command (K): assert	expected **302** to be one of **[ 200, 302 ]**
+                        Actual: 	302
+                        Expected: 	[200,302]
+        cy:command (K): When 	**I click on Accounts Overview**
+        cy:command (K): get	a[href*="overview"]
+        cy:command (K): click
+        cy:command (K): page load	--page loaded--
+            cy:xhr (K): GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts
+                        Status: 200
+        cy:command (K): Then 	**I should get all account balances**
+        cy:command (K): get	table#accountTable
+        cy:command (K): assert	expected **<table#accountTable.gradient-style>** to be **visible**
+        cy:command (K): get	table#accountTable tbody tr
+        cy:command (K): assert	expected **[ <tr>, 16 more... ]** to have a length above **0**
+        cy:command (K): get	table#accountTable tbody tr td:last-child
+        cy:command (K): And 	**I should calculate total amount**
+        cy:command (K): And 	**I should log the results**
 
 
 
 cypress\e2e\features\parabank3.Logout.feature:
-    An uncaught error was detected outside of a test
+    ParaBank Logout Functionality -> Successful logout
+        cy:command (K): Given 	**I navigate to ParaBank application**
+        cy:command (K): visit	/index.htm?ConnType=JDBC
+        cy:command (K): And 	**I login with valid credentials**
+        cy:command (K): visit	/index.htm?ConnType=JDBC
+      cy:intercept (K): Method: POST
+                        Matcher: "**/login**"
+        cy:command (K): get	input[name="username"]
+        cy:command (K): clear
+        cy:command (K): type	Nifaanya Priya
+        cy:command (K): get	input[name="password"]
+        cy:command (K): clear
+        cy:command (K): type	Nifanaya_Incu
+        cy:command (K): get	input[value="Log In"]
+        cy:command (K): click
+        cy:command (K): form sub	--submitting form--
+        cy:command (K): page load	--page loaded--
+        cy:command (K): new url	https://parabank.parasoft.com/parabank/overview.htm
+            cy:xhr (K): GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts
+                        Status: 200
+        cy:command (K): wait	@loginRequest
+        cy:command (K): assert	expected **[ 200, 302 ]** to be an array
+        cy:command (K): assert	expected **302** to be one of **[ 200, 302 ]**
+                        Actual: 	302
+                        Expected: 	[200,302]
+        cy:command (K): When 	**I click logout button**
+        cy:command (K): get	a[href*="logout"]
+        cy:command (K): click
+        cy:command (K): page load	--page loaded--
+        cy:command (K): new url	https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC
+        cy:command (K): Then 	**I should be redirected to login page**
+        cy:command (K): url
+        cy:command (K): assert	expected **https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC** to include **index.htm**
+        cy:command (K): And 	**I should see login form**
+        cy:command (K): get	input[name="username"]
+        cy:command (K): assert	expected **<input.input>** to be **visible**
+        cy:command (K): get	input[name="password"]
+        cy:command (K): assert	expected **<input.input>** to be **visible**
+        cy:command (K): get	input[value="Log In"]
+        cy:command (K): assert	expected **<input.button>** to be **visible**
+        cy:command (K): And 	**session should be terminated**
+        cy:command (K): getCookies
+        cy:command (K): assert	expected **[ Array(1) ]** not to be empty
+
+    ParaBank Logout Functionality -> Logout and attempt to access protected page
+        cy:command (K): Given 	**I navigate to ParaBank application**
+        cy:command (K): visit	/index.htm?ConnType=JDBC
+        cy:command (K): And 	**I login with valid credentials**
+        cy:command (K): visit	/index.htm?ConnType=JDBC
+      cy:intercept (K): Method: POST
+                        Matcher: "**/login**"
+        cy:command (K): get	input[name="username"]
+        cy:command (K): clear
+        cy:command (K): type	Nifaanya Priya
+        cy:command (K): get	input[name="password"]
+        cy:command (K): clear
+        cy:command (K): type	Nifanaya_Incu
+        cy:command (K): get	input[value="Log In"]
+        cy:command (K): click
+        cy:command (K): form sub	--submitting form--
+        cy:command (K): page load	--page loaded--
+        cy:command (K): new url	https://parabank.parasoft.com/parabank/overview.htm
+            cy:xhr (K): GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/12212/accounts
+                        Status: 200
+        cy:command (K): wait	@loginRequest
+        cy:command (K): assert	expected **[ 200, 302 ]** to be an array
+        cy:command (K): assert	expected **302** to be one of **[ 200, 302 ]**
+                        Actual: 	302
+                        Expected: 	[200,302]
+        cy:command (K): When 	**I click logout button**
+        cy:command (K): get	a[href*="logout"]
+        cy:command (K): click
+        cy:command (K): page load	--page loaded--
+        cy:command (K): new url	https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC
+        cy:command (K): And 	**I try to access accounts overview directly**
+        cy:command (X): visit	/overview.htm
 

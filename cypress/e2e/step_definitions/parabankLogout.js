@@ -27,7 +27,7 @@ Then('session should be terminated', () => {
   cy.getCookies().should('not.be.empty');
 });
 
-When('I try to access accounts overview directly', () => {
+Then('I try to access accounts overview directly', () => {
   cy.log('Attempting to access protected page but unhandled error is displayed');
   cy.visit('/overview.htm');
 });

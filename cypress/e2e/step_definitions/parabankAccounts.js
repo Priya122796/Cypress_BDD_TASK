@@ -1,5 +1,6 @@
 import { ParaBankDashboardPage } from '../pages/ParaBankDashboardPage';
 import { ParaBankAccountsPage } from '../pages/ParaBankAccountsPage';
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor"; 
 
 const dashboardPage = new ParaBankDashboardPage();
 const accountsPage = new ParaBankAccountsPage();
