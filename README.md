@@ -16,22 +16,7 @@ End-to-end testing framework using **Cypress** and **Cucumber BDD** for ParaBank
 
 ## Project Structure
 
-```
-cypress-bdd-TASK/
-├── cypress/
-│   ├── e2e/features
-│   ├── e2e/pages
-│   ├── e2e/step_definitions
-│   ├── e2e/fixtures
-│   ├── support
-│   ├── screenshots
-│   └── videos
-├── allure-results/
-├── allure-report/
-├── reports/
-├── cypress.config.js
-└── package.json
-```
+![alt text](image.png)
 
 ## Installation
 
